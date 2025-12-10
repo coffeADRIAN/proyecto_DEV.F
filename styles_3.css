@@ -1,0 +1,76 @@
+.cuadro_azul {
+    background-color: #0B2A5A;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    height: 160px;
+    margin: 5px;
+}
+.cuadro_verde {
+    background-color: #28A745;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    height: 160px;
+    margin: 5px;
+}
+.cuadro_rojo {
+    background-color: #B71C1C;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 190px;
+    height: 200px;
+    margin: 5px;
+}
+.cuadro_amarillo {
+    background-color: #F0C14B;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    width: 190px;
+    height: 200px;
+    margin: 5px;
+}
+.caja_gris {
+    background-color: #6C757D;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 800px;
+    height: 85px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2px;
+}
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #000000;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10opx;
+    align-items: end;
+}
+.flex-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10opx;
+    align-items: start;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: antiquewhite;
+    text-decoration-color: aqua;
+    height: 20px;
+}
+ 
