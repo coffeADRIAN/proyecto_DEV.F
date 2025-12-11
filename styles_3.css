@@ -1,5 +1,39 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #5f2d2d;
+    background-image: url('imagen_sin_fondo.png');
+    font-family: noto-sans, sans-serif;
+    background-size: cover;
+    animation: animate 10s linear infinite;
+}
+@keyframes animate {
+    to {
+        background-position-x: -1380px;
+    }
+}
+header {
+    display : flex;
+    align-items: center; /* Centra verticalmente los elementos dentro del encabezado */
+    position: static; /* Fija el encabezado en la parte superior */
+    top: 0; /* Fija el encabezado en la parte superior */
+    justify-content: left; /* Fija el encabezado en la parte superior */
+    width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
+    background-color: rgb(24, 189, 156);
+    text-decoration-color: rgb(58, 37, 178);
+    height: 30px;
+}
+li {
+    background-color: rgb(15, 128, 73);
+    margin: 5px 0;
+}
+a {
+    text-decoration: none;
+    color: rgb(0, 14, 4);
+    font-weight: bold;
+}
+
 .cuadro_azul {
-    background-color: #0B2A5A;
+    border: 10px solid #181839;
     color: white;
     padding: 20px;
     border-radius: 5px;
@@ -8,7 +42,7 @@
     margin: 5px;
 }
 .cuadro_verde {
-    background-color: #28A745;
+    border: 10px solid #133718;
     color: white;
     padding: 20px;
     border-radius: 5px;
@@ -17,7 +51,7 @@
     margin: 5px;
 }
 .cuadro_rojo {
-    background-color: #B71C1C;
+    border: 10px solid #7B1A1A;
     color: white;
     padding: 20px;
     border-radius: 5px;
@@ -26,8 +60,8 @@
     margin: 5px;
 }
 .cuadro_amarillo {
-    background-color: #F0C14B;
-    color: black;
+    border: 10px solid #E4D31F;
+    color: white;
     padding: 20px;
     border-radius: 5px;
     width: 190px;
@@ -35,7 +69,7 @@
     margin: 5px;
 }
 .caja_gris {
-    background-color: #6C757D;
+    border: 10px solid #4A4A4A;
     color: white;
     padding: 20px;
     border-radius: 5px;
@@ -46,14 +80,10 @@
     text-align: center;
     margin: 2px;
 }
-body {
-    font-family: 'Verdana', sans-serif;
-    background-color: #000000;
-}
 .flex-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     height: 10opx;
     align-items: end;
 }
@@ -63,14 +93,5 @@ body {
     align-items: center;
     height: 10opx;
     align-items: start;
-}
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: antiquewhite;
-    text-decoration-color: aqua;
-    height: 20px;
 }
  
