@@ -1,40 +1,55 @@
 .container{ /*https://www.silocreativo.com/introduccion-primeros-pasos-css-grid-2/*/
   display: grid; 
-	grid-template-rows: [row-header] 200px [row-main] auto [row-footer] 200px [row-last]; /* Definición de filas */
-	grid-template-columns: [col-sid1] 1fr [col-main] 1fr [col-sid2] 1fr [col-last]; /* Definición de columnas */
-  	gap: 5px; /* Espacio entre filas y columnas */
-	height: 80vh; /* Altura de la ventana del navegador */
-	width: 80vw; /* Ancho de la ventana del navegador */
-	/* Centrar horizontalmente en la ventana */
+	grid-template-rows: 200px 1fr 200px;
+	grid-template-columns: 1fr 1fr 1fr;
+	height: 90vh; /* Altura de la ventana del navegador */
+	width: 90vw; /* Ancho de la ventana del navegador */
 	margin: 0 auto; /* Centrar verticalmente en la ventana */
+  animation: rowsAnim 6s both infinite;
+}
+
+@keyframes rowsAnim {
+  0% {
+    grid-template-rows: 200px 1fr 200px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  50% {
+    grid-template-rows: 0fr 1fr 0fr;
+    grid-template-columns: 1fr 0fr 1fr;
+  }
+  100% {
+    grid-template-rows: 200px 1fr 200px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
 }
 .header {
 	grid-area: 1 / 1 / 2 / 3;
-  border: 5px solid #000000;
+  border: 1px solid #000000;
   background-color: black;
 }
 
 .sidebar1 {
 	grid-area: 2 / 1 / 4 / 2;
-  border: 5px solid #000000;
+  border: 1px solid #000000;
   background-color: gray;
 }
 
 .main {
 	grid-area: 2 / 2 / 3 / 3;
-  border: 5px solid #000000;
+  border: 1px solid #000000;
   background-color: rgb(63, 66, 141);
 }
 
 .sidebar2 {
 	grid-area: 3 / 3 / -4 / 3;
-  border: 5px solid #000000;
+  border: 1px solid #000000;
   background-color: indigo;
 }
 
 .footer {
 	grid-area: 3 / 2 / 4 / 4;
-  border: 5px solid #000000;
+  border: 1px solid #000000;
   background-color: brown;
 }
 
