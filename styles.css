@@ -1,63 +1,223 @@
 .container{ /*https://www.silocreativo.com/introduccion-primeros-pasos-css-grid-2/*/
   display: grid; 
-	grid-template-rows: 200px 1fr 200px;
+	grid-template-rows: 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
 	height: 90vh; /* Altura de la ventana del navegador */
 	width: 90vw; /* Ancho de la ventana del navegador */
 	margin: 0 auto; /* Centrar verticalmente en la ventana */
-  animation: rowsAnim 6s both infinite;
+  font-family: noto-sans, sans-serif; 
 }
-
-@keyframes rowsAnim {
+.container.azul {
+  animation: AzulAnim 4s linear forwards;
+}
+.container.verde {
+  animation: VerdeAnim 4s linear reverse forwards;
+}
+.container.rojo {
+  animation: RojAnim 4s ease-in-out infinite;
+}
+.container.amarillo {
+  animation: AmarilloAnim 4s ease-in-out infinite reverse;
+}
+.no-top    { border-top: none !important; } 
+.no-right  { border-right: none !important; } 
+.no-bottom { border-bottom: none !important; }
+.no-left   { border-left: none !important; }
+/*............................................................ animaciones de los cuadros
+..............................................................*/
+@keyframes AzulAnim {
   0% {
-    grid-template-rows: 200px 1fr 200px;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
   50% {
     grid-template-rows: 0fr 1fr 0fr;
     grid-template-columns: 1fr 0fr 1fr;
   }
+  60% {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 3fr;
+  }
+  70% {
+    grid-template-rows: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 1fr 2fr;
+  }
   100% {
-    grid-template-rows: 200px 1fr 200px;
+    grid-template-rows: 1fr 0fr 5fr;
+    grid-template-columns: 0fr 1fr 0fr;
+  }
+}
+@keyframes VerdeAnim {
+  0% {
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
+  50% {
+    grid-template-rows: 5fr 0fr 1fr;
+    grid-template-columns: 0fr 1fr 0fr;
+  }
+  60% {
+    grid-template-rows: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 1fr 2fr;
+  }
+  70% {
+    grid-template-rows: 3fr 1fr 3fr;
+    grid-template-columns: 1fr 0fr 1fr;
+  }
+  100% {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
+@keyframes RojAnim {
+  0%, 100% {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  50% {
+    grid-template-rows: 0fr 5fr 0fr;
+    grid-template-columns: 5fr 0fr 5fr;
+  }
+}
+@keyframes AmarilloAnim {
+  0%, 100% {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  50% {
+    grid-template-rows: 3fr 0fr 3fr;
+    grid-template-columns: 0fr 5fr 0fr;
+  }
+}
+/*............................................................ animacion del header
+..............................................................*/
 .header {
-	grid-area: 1 / 1 / 2 / 3;
-  border: 1px solid #000000;
-  background-color: black;
+	grid-area: 1 / 1 / 3 / 2;
+  border: 2px solid #baa00a;
 }
-
+.header.anim {
+  animation: headerAnim 2s linear 1.5s forwards,
+  hideBorders 3s ease-out forwards;
+}
+@keyframes headerAnim {
+ to {
+  animation-delay: 2s;
+  background-color: #0C2310;
+ }}
+.header.anim:hover {
+  background-color: #15421b !important;
+  cursor: pointer;
+}
+/*............................................................ animacion de la sidebar1
+..............................................................*/
 .sidebar1 {
-	grid-area: 2 / 1 / 4 / 2;
-  border: 1px solid #000000;
-  background-color: gray;
+	grid-area: 3 / 1 / 4 / 3;
+  border: 2px solid #baa00a;
+  background-size: cover;
 }
-
+.sidebar1.anim {
+  animation: 
+  sidebar1Anim 1s linear 1.5s forwards,
+  hideBorders 3s ease-out forwards;
+}
+@keyframes sidebar1Anim {
+ to {
+  background-color: #181839;
+  background-image: url('imagen_sin_fondo.png');
+  background-position-x: -1372px;
+  background-position-y: -1000px;
+ }
+}
+.sidebar1.anim:hover {
+  background-color: #1B58A2 !important;
+  cursor: pointer;
+}
+/*............................................................
+..............................................................*/
 .main {
 	grid-area: 2 / 2 / 3 / 3;
-  border: 1px solid #000000;
-  background-color: rgb(63, 66, 141);
+  border: 2px solid #baa00a;
 }
-
+/*............................................................ animacion de la sidebar2
+..............................................................*/
 .sidebar2 {
-	grid-area: 3 / 3 / -4 / 3;
-  border: 1px solid #000000;
-  background-color: indigo;
+	grid-area: 2 / 3 / 4 / 4;
+  border: 2px solid #baa00a;
 }
-
+.sidebar2.anim {
+  animation: sidebar2Anim 1s linear 1.5s forwards,
+  hideBorders 3s ease-out forwards;
+}
+@keyframes sidebar2Anim {
+ to {
+  animation-delay: 2s;
+  background-color: #7D7513;
+ }
+}
+.sidebar2.anim:hover {
+  cursor: pointer;
+  background-color: #E4D31F !important;
+}
+/*............................................................animacion del footer
+..............................................................*/
 .footer {
-	grid-area: 3 / 2 / 4 / 4;
-  border: 1px solid #000000;
-  background-color: brown;
+	grid-area: 1 / 2 / 2 / 4;
+  border: 2px solid #baa00a;
 }
-
+.footer.anim {
+  animation: footerAnim 1s linear 1.5s forwards,
+  hideBorders 3s ease-out forwards;
+}
+@keyframes footerAnim {
+ to {
+  animation-delay: 2s;
+  background-color: #4A0F0F;
+ }
+}
+.footer.anim:hover {
+  cursor: pointer;
+  background-color: #7B1A1A !important;
+}
+/*............................................................animacion para ocultar bordes
+..............................................................*/
+@keyframes hideBorders {
+  0%, 90% {
+    border-color: #baa00a;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+.sidebar1:not(.anim),
+.header:not(.anim),
+.main,
+.sidebar2:not(.anim),
+.footer:not(.anim) {
+  animation: hideBorders 4.1s ease-out forwards;
+}
+.footer-content {
+  color: thistle;
+  opacity: 0;
+  animation: showContent 0.5s ease-out 4s forwards;
+}
+@keyframes showContent {
+  to {
+    opacity: 1;
+  }
+}
 header {
-  background-color: lightgray;
-  text-align: center;
-  padding: 10px;
-  font-size: 24px;
-  font-weight: bold;
+    display : flex;
+    position: static; /* Fija el encabezado en la parte superior */
+    top: 0; /* Fija el encabezado en la parte superior */
+    justify-content: left; /* Fija el encabezado en la parte superior */
+    width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
+    text-decoration-color: rgb(58, 37, 178);
+    height: 30px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
 }
 

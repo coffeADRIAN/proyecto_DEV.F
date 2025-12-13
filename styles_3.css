@@ -1,9 +1,9 @@
 body {
     font-family: 'Verdana', sans-serif;
-    background-color: #5f2d2d;
+    background-color: #181515;
     background-image: url('imagen_sin_fondo.png');
     font-family: noto-sans, sans-serif;
-    background-size: cover;
+    background-size: cover; 
     animation: animate 10s linear infinite;
 }
 @keyframes animate {
@@ -13,36 +13,72 @@ body {
 }
 header {
     display : flex;
-    align-items: center; /* Centra verticalmente los elementos dentro del encabezado */
     position: static; /* Fija el encabezado en la parte superior */
     top: 0; /* Fija el encabezado en la parte superior */
     justify-content: left; /* Fija el encabezado en la parte superior */
     width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
-    background-color: rgb(24, 189, 156);
     text-decoration-color: rgb(58, 37, 178);
     height: 30px;
 }
 li {
-    background-color: rgb(15, 128, 73);
     margin: 5px 0;
 }
 a {
     text-decoration: none;
-    color: rgb(0, 14, 4);
+    color: rgb(177, 200, 184);
     font-weight: bold;
 }
 
 .cuadro_azul {
-    border: 10px solid #181839;
+    background-color: gray;
+    background-image: url('Imagen2.png');
+    background-size: cover; 
+    opacity: 0.9;
     color: white;
     padding: 20px;
     border-radius: 5px;
     width: 250px;
     height: 160px;
     margin: 5px;
+}
+.cuadro_azul:hover {
+    background-color: #181839;
+    opacity: 1;
 }
 .cuadro_verde {
-    border: 10px solid #133718;
+    background-color: gray;
+    background-image: url('imagen4.png');
+    background-size: cover; 
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 190px;
+    height: 200px;
+    margin: 5px;
+}
+.cuadro_verde:hover {
+    background-color: #133718;
+    opacity: 1;
+}
+.cuadro_rojo {
+    background-color:  gray;
+    background-image: url('Imagen1.png');
+    background-size: cover; 
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 190px;
+    height: 200px;
+    margin: 5px;
+}
+.cuadro_rojo:hover {
+    background-color: #7B1A1A;
+    opacity: 1;
+}
+.cuadro_amarillo {
+    background-color: gray;
+    background-image: url('Imagen3.png');
+    background-size: cover; 
     color: white;
     padding: 20px;
     border-radius: 5px;
@@ -50,30 +86,16 @@ a {
     height: 160px;
     margin: 5px;
 }
-.cuadro_rojo {
-    border: 10px solid #7B1A1A;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 190px;
-    height: 200px;
-    margin: 5px;
-}
-.cuadro_amarillo {
-    border: 10px solid #E4D31F;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 190px;
-    height: 200px;
-    margin: 5px;
+.cuadro_amarillo:hover {
+    background-color: #E4D31F;
+    opacity: 1;
 }
 .caja_gris {
-    border: 10px solid #4A4A4A;
+background-color: rgb(168, 5, 5);
     color: white;
     padding: 20px;
     border-radius: 5px;
-    width: 800px;
+    width: 1000px;
     height: 85px;
     justify-content: center;
     align-items: center;
