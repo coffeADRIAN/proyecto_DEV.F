@@ -14,10 +14,10 @@
   animation: VerdeAnim 4s linear reverse forwards;
 }
 .container.rojo {
-  animation: RojAnim 4s ease-in-out infinite;
+  animation: RojAnim 4s linear infinite;
 }
 .container.amarillo {
-  animation: AmarilloAnim 4s ease-in-out infinite reverse;
+  animation: AmarilloAnim 4s linear infinite reverse;
 }
 .no-top    { border-top: none !important; } 
 .no-right  { border-right: none !important; } 
@@ -29,22 +29,34 @@
   0% {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    background-color: black;
   }
   50% {
     grid-template-rows: 0fr 1fr 0fr;
     grid-template-columns: 1fr 0fr 1fr;
+    background-color: black;
+    background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+    background-size: cover; /* O el tamaño específico que necesites */
+    background-position: center center;
   }
   60% {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 3fr 1fr 3fr;
+    background-color: #181839;
   }
   70% {
     grid-template-rows: 2fr 1fr 2fr;
     grid-template-columns: 2fr 1fr 2fr;
+    background-color: #181839;
   }
   100% {
     grid-template-rows: 1fr 0fr 5fr;
     grid-template-columns: 0fr 1fr 0fr;
+    background-color: #181839;
+    background-image: url('imagen_sin_fondo.png');
+    background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+    background-size: cover; /* O el tamaño específico que necesites */
+    background-position: center center; /* O tus coordenadas específicas */
   }
 }
 @keyframes VerdeAnim {
@@ -93,11 +105,12 @@
 ..............................................................*/
 .header {
 	grid-area: 1 / 1 / 3 / 2;
-  border: 2px solid #baa00a;
+  border: 3px solid #baa00a;
+  background-color: black;
 }
 .header.anim {
   animation: headerAnim 2s linear 1.5s forwards,
-  hideBorders 3s ease-out forwards;
+  hideBorders 3s linear forwards;
 }
 @keyframes headerAnim {
  to {
@@ -112,37 +125,40 @@
 ..............................................................*/
 .sidebar1 {
 	grid-area: 3 / 1 / 4 / 3;
-  border: 2px solid #baa00a;
+  border: 3px solid #baa00a;
   background-size: cover;
+  position: relative;
+  z-index: 2;
 }
 .sidebar1.anim {
   animation: 
-  sidebar1Anim 1s linear 1.5s forwards,
-  hideBorders 3s ease-out forwards;
-}
-@keyframes sidebar1Anim {
- to {
-  background-color: #181839;
-  background-image: url('imagen_sin_fondo.png');
-  background-position-x: -1372px;
-  background-position-y: -1000px;
- }
+  hideBorders 3.8s linear forwards,
+  ReactivaMouse 4s linear forwards;
 }
 .sidebar1.anim:hover {
-  background-color: #1B58A2 !important;
+  background-color: transparent;
   cursor: pointer;
+}
+/* Esto dice: "Si el container tiene un hijo sidebar1 que está siendo hovered..." */
+.container:has(.sidebar1.anim:hover) {
+  /* ...cambia el color de fondo DETRÁS de la imagen a azul claro */
+  /* Usamos !important para ganarles a los keyframes de la animación */
+  background-color: #4ea6ff !important; 
 }
 /*............................................................
 ..............................................................*/
 .main {
 	grid-area: 2 / 2 / 3 / 3;
-  border: 2px solid #baa00a;
+  border: 3px solid #baa00a;
+  background-color: black;
+
 }
 /*............................................................ animacion de la sidebar2
 ..............................................................*/
 .sidebar2 {
 	grid-area: 2 / 3 / 4 / 4;
-  border: 2px solid #baa00a;
+  border: 3px solid #baa00a;
+  background-color: black;
 }
 .sidebar2.anim {
   animation: sidebar2Anim 1s linear 1.5s forwards,
@@ -162,7 +178,8 @@
 ..............................................................*/
 .footer {
 	grid-area: 1 / 2 / 2 / 4;
-  border: 2px solid #baa00a;
+  border: 3px solid #baa00a;
+  background-color: black;
 }
 .footer.anim {
   animation: footerAnim 1s linear 1.5s forwards,
@@ -193,7 +210,7 @@
 .main,
 .sidebar2:not(.anim),
 .footer:not(.anim) {
-  animation: hideBorders 4.1s ease-out forwards;
+  animation: hideBorders 4s step-end forwards;
 }
 .footer-content {
   color: thistle;
@@ -204,6 +221,11 @@
   to {
     opacity: 1;
   }
+}
+@keyframes ReactivaMouse {
+  0%   { pointer-events: none; }
+  99%  { pointer-events: none; }
+  100% { pointer-events: auto; } /* Solo al final permite el click/hover */
 }
 header {
     display : flex;
