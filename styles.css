@@ -216,6 +216,7 @@
   color: thistle;
   opacity: 0;
   animation: showContent 0.5s ease-out 4s forwards;
+  font-size: 30px;
 }
 @keyframes showContent {
   to {

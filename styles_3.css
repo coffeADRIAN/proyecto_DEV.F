@@ -18,19 +18,21 @@ header {
     justify-content: left; /* Fija el encabezado en la parte superior */
     width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
     text-decoration-color: rgb(58, 37, 178);
-    height: 30px;
+    height: 40px;
 }
 li {
     margin: 5px 0;
-    height: 100vw;
     background-color: #EAEAEA;
 }
 a {
     text-decoration: none;
-    color: rgb(177, 200, 184);
+    color: black;
     font-weight: bold;
 }
-
+ul {
+    background-color: #EAEAEA;
+    height: 100vw;
+}
 .cuadro_azul {
     background-color: gray;
     background-image: url('Imagen2.png');
