@@ -22,6 +22,8 @@ header {
 }
 li {
     margin: 5px 0;
+    height: 100vw;
+    background-color: #EAEAEA;
 }
 a {
     text-decoration: none;
