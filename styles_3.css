@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Verdana', sans-serif;
     background-color: #181515;
@@ -22,7 +25,6 @@ header {
 }
 li {
     margin: 5px 0;
-    background-color: #EAEAEA;
 }
 a {
     text-decoration: none;
@@ -30,7 +32,7 @@ a {
     font-weight: bold;
 }
 ul {
-    background-color: #EAEAEA;
+    background-color: gray;
     height: 100vw;
 }
 .cuadro_azul {
