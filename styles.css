@@ -4,7 +4,7 @@
 	grid-template-columns: 1fr 1fr 1fr;
 	height: 90vh; /* Altura de la ventana del navegador */
 	width: 90vw; /* Ancho de la ventana del navegador */
-	margin: 0 auto; /* Centrar verticalmente en la ventana */
+	margin: 3% auto 0 auto; /* Centrar horizontalmente y bajar de arriba */
   font-family: noto-sans, sans-serif; 
   z-index: 0;
 }
@@ -181,6 +181,7 @@
 ..............................................................*/
 .footer {
 	grid-area: 1 / 2 / 2 / 4;
+	position: relative;
 }
 .footer.anim {
   animation: footerAnim 1s linear 1.5s forwards,
@@ -231,6 +232,9 @@
   opacity: 0;
   animation: showContent 0.5s ease-out 4s forwards;
   font-size: 40px;
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
 }
 @keyframes showContent {
   to {
