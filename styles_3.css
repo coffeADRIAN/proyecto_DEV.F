@@ -1,5 +1,5 @@
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Permite un desplazamiento suave entre secciones */
 }
 body {
     font-family: 'Verdana', sans-serif;
